@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreateNew</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        body{
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5rem;
+            background-color:aliceblue;
+        }
+        h1{
+            font-size: 5rem;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            gap: 15px;
+            align-items: start;
+            padding:15px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .blogName{
+            height: 2rem;
+            font-size: 1.5rem;
+            background-color: hsl(208, 21%, 86%);
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        .blogContent{
+            height: 12rem;
+            font-size: 1.5rem;
+            width: 100%;
+            background-color: hsl(208, 21%, 86%);
+            color: black;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        .submit{
+            text-decoration: none;
+            color: white;
+            background-color: hsl(43, 71%, 49%);
+            height: 2rem;
+            width: 8rem;
+            border: 5px solid hwb(43 0% 54%);
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: hsl(208, 88%, 47%);
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 5rem;
+        }
+        .submit:hover{
+            background-color: hwb(43 52% 0%);
+            border: 5px solid hwb(43 52% 0%);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>CREATE NEW BLOG</h1>
+    <form action="/createNew" method="POST">
+        <input class="blogName" type="text" name="blogName" placeholder="BLOG NAME">
+        <input class="blogContent" type="text" name="blogContent" placeholder="BLOG CONTENT">
+        <input class="submit" type="submit">
+    </form>
+</body>
+</html>

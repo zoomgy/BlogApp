@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogPost</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        h1{
+            font-size: 5rem;
+        }
+        a,button{
+            text-decoration: none;
+            color: white;
+            background-color: hsl(43, 71%, 49%);
+            height: 2rem;
+            width: 8rem;
+            border: 5px solid hwb(43 0% 54%);
+            border-radius: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        a:hover , button:hover{
+            background-color: hwb(43 52% 0%);
+            border: 5px solid hwb(43 52% 0%);
+            color: black;
+        }
+        .modify1{
+            background-color: hsl(208, 88%, 47%);
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 5rem;
+        }
+        .modify1:hover{
+            background-color: hwb(43 52% 0%);
+            border: 5px solid hwb(43 52% 0%);
+            color: black;
+            color: black;
+        }
+        .modify2{
+            background-color: #c84e4e;
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 5rem;
+        }
+        .modify2:hover{
+            background-color: hwb(43 52% 0%);
+            border: 5px solid hwb(43 52% 0%);
+            color: black;
+            color: black;
+        }
+        body{
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5rem;
+            background-color:aliceblue;
+        }
+        .main-container{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 70%;
+            flex-basis: 500px;
+            gap: 20px;
+        }
+        .sub-container{
+            width: 100%;
+            flex-basis: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color:hsl(208, 21%, 86%);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .button-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>BLOG WEBSITE</h1>
+    <a href="/new">CreateNew</a>
+    <div class="main-container">
+        <% for(var i = 0 ; i < blog.length ; i++){ %>
+            <div class="sub-container">
+                <div class="content">
+                    <h2 class="blogName"><%= blog[i].blogName %></h2>
+                    <p class="blogContent"><%= blog[i].blogContent %></p>
+                </div>
+                <div class="button-container">
+                    <form action="/edit-post" method="POST"><input type="hidden" name="postId" value="<%= blog[i].blogId %>"><button type="submit" class="modify1">Edit</button></form>
+                    <form action="/delete-post" method="POST"><input type="hidden" name="postId" value="<%= blog[i].blogId %>"><button type="submit" class="modify2">Delete</button></form>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
